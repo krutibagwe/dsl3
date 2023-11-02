@@ -39,12 +39,12 @@ void Display(){
     else{
         printf("The elements of the stack are: \n");
         for(int i=0; i<=top; i++){
-            printf("%d", stack[i]);
+            printf("%d\n", stack[i]);
         }
     }
 }
 int main(){
-    int choice;
+    int choice=1;
     while(choice==1){
     printf("Enter\n 1. Push\n 2. Pop\n 3. Peek\n 4. Display\n");
     printf("Enter your choice: ");
