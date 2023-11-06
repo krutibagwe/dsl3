@@ -33,6 +33,20 @@ int peek() {
     return top->info;
 }
 
+void display() {
+    struct node* temp = top;
+    if (temp == NULL) {
+        printf("Stack is empty.\n");
+        return;
+    }
+    printf("Stack elements: \n");
+    while (temp != NULL) {
+        printf("%d \n", temp->info);
+        temp = temp->ptr;
+    }
+    printf("\n");
+}
+
 int main() {
     int no, ch, e;
     
@@ -40,6 +54,7 @@ int main() {
     printf("\n 1. Push");
     printf("\n 2. Pop");
     printf("\n 3. Peek");
+    printf("\n 4. Display");
     
    
         printf("\nEnter the choice: ");
@@ -63,6 +78,10 @@ int main() {
                     e = peek();
                     printf("Top element: %d\n", e);
                 }
+                break;
+                
+            case 4:
+                display();
                 break;
             
             default:
