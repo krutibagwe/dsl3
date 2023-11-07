@@ -21,19 +21,30 @@ void selectionSort(int arr[], int n){
     }
 }
 
-void display(int arr[], int size){
-    for(int i=0; i<size; i++){
+void display(int arr[], int n){
+    int i;
+    for(i =0; i<n; i++){
         printf("%d ", arr[i]);
     }
 }
 
-int main(){
-    int arr [] = {84,12,4,69,7,108,35};
-    int n= sizeof(arr)/ sizeof(arr[0]);
+int main() {
+    int n, i;
+
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
     selectionSort(arr, n);
-    printf("Sorted array: \n");
-    display(arr,n);
     
+    printf("Sorted array: ");
+    display(arr, n);
+
     return 0;
 }
-    
