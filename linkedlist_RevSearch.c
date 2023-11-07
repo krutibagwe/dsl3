@@ -40,6 +40,12 @@ struct node* createList(){
 }
 
 struct node* reverse(struct node* head){
+    
+     if (head == NULL) {
+        printf("Empty List\n");
+        
+    }
+    
     struct node* prev = NULL;
     struct node* current = head;
     struct node* next = NULL;
@@ -69,14 +75,17 @@ void search(struct node* head, int key){
     printf("Node with data %d not found in the list.\n", key);
 }
 
-void display(struct node* head){
-    struct node* temp = head;
-    printf("Linked List: \n");
-    while(temp!=0){
-        printf("%d\n", temp->data);
-        temp= temp->next;
+void display(struct node* head) {
+    if (head == NULL) {
+        printf("Empty List\n");
+    } else {
+        struct node* temp = head;
+        printf("Linked List: \n");
+        while (temp != NULL) {
+            printf("%d\n", temp->data);
+            temp = temp->next;
+        }
     }
-    //printf("Empty List\n");
 }
 
 int main(){
@@ -84,8 +93,8 @@ int main(){
     int choice, key;
     
     while(1){
-        printf("1. Create\n 2.Reverse\n 3.Search\n 4.Display \n");
-        printf("Enter yor choide: \n");
+        printf("\n\n1. Create\n2.Reverse\n3.Search\n4.Display \n");
+        printf("Enter yor choice: \n");
         scanf("%d",&choice);
         
         switch(choice){
@@ -98,6 +107,9 @@ int main(){
             break;
           
             case 3:
+            if (head == NULL) {
+            printf("Empty List\n");
+            }
             printf("Enter the key to be searched: \n");
             scanf("%d", & key);
             search(head, key);
@@ -113,4 +125,5 @@ int main(){
     }
     return 0;
 }
+
 
