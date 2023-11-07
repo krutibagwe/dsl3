@@ -56,18 +56,24 @@ void printArray(int arr[], int size) {
     printf("\n");
 }
 
+
 int main() {
-    int arr[] = {12, 11, 13, 5, 6, 7};
-    int arr_size = sizeof(arr) / sizeof(arr[0]);
+    int n, i;
 
-    printf("Given array is: ");
-    printArray(arr, arr_size);
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
 
-    mergeSort(arr, 0, arr_size - 1);
+    int arr[n];
 
-    printf("Sorted array is: ");
-    printArray(arr, arr_size);
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+   mergeSort(arr, 0, n - 1);
+    
+    printf("Sorted array: ");
+    printArray(arr, n);
 
     return 0;
 }
-
